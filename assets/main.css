@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: var(--light);
+    font-family: 'Montserrat', sans-serif;
+    & > footer {
+        margin-top: auto;
+        padding: var(--spacing-2);
+        text-align: center;
+    }
+}
+
+main {
+    max-width: 900px;
+    margin: var(--spacing-2) auto;
+    padding: var(--spacing-2);
+}
+
+h1, h2 {
+    font-family: 'Fraunces', serif;
+    color: var(--dark);
+}
+
+p {
+    line-height: 1.5;
+    font-size: .875rem;
+    color: var(--dark-gray);
+}
+
+a[role="button"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-2);
+    padding: var(--spacing-2);
+    border-radius: var(--border-radius);
+    background-color: var(--primary);
+    font-size: .875em;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color .3s;
+    &:hover {
+        /* background-color: hsl(from var(--primary) h s calc(l * 0.8)); */
+        background-color: color-mix(in srgb, var(--primary) 80%, #000);
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    background-color: var(--white);
+    max-width: 320px;
+    & > section {
+        display: flex;
+        flex-direction: column;
+        padding: var(--spacing-2);
+        & > p:first-child {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0;
+            & + * {
+                margin-top: var(--spacing);
+            }
+        }
+
+        & > h2 {
+            max-width: 15ch;
+            margin-bottom: var(--spacing);
+            @media screen and (min-width: 768px) {
+                max-width: 10ch;
+            }
+        }
+        & > aside {
+            display: flex;
+            flex-direction: column;
+            margin-top: auto;
+        }
+    }
+    & p:has(data) {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-2);
+    }
+    & data {
+        letter-spacing: normal;
+        &:not(:has(del)) {
+            color: var(--primary);
+            font-family: 'Fraunces', serif;
+            font-weight: bold;
+            font-size: 2rem;
+        }
+        
+    }
+    @media screen and (min-width: 768px) {
+        flex-direction: row;
+        max-width: 500px;
+        & > * {
+            width: 50%;
+        }
+        
+    }
+    & img {
+        height: 100%;
+        object-fit: cover;
+    }
+}

@@ -1,0 +1,12 @@
+:root {
+    --spacing: .5rem;
+    --spacing-2: calc(var(--spacing) * 2);
+
+    --border-radius: 8px;
+
+    --primary: hsl(158, 36%, 37%);
+    --dark: hsl(212, 21%, 14%);
+    --dark-gray: hsl(228, 12%, 48%);
+    --light: hsl(30, 38%, 92%);
+    --white: hsl(0, 0%, 100%);
+}
